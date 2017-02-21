@@ -16,6 +16,7 @@ phases:
       - mvn install
   post_build:
     commands:
+      - dmesg | tail
       - |
         echo Build completed on `date`
 artifacts:
