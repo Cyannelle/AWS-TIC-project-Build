@@ -17,7 +17,11 @@ phases:
     commands:
       - |
         echo Build started on `date`
-      - mvn clean install
+      - mvn clean
+        - if [ "$?" -ne 0 ]; then
+          - echo "Maven Clean Unsuccessful!"
+          - exit 1
+        - fi
   post_build:
     commands:
       - dmesg | tail
