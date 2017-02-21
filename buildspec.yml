@@ -17,7 +17,7 @@ phases:
     commands:
       - |
         echo Build started on `date`
-      - mvn clean install
+      - mvn clean compile
   post_build:
     commands:
       - dmesg | tail
