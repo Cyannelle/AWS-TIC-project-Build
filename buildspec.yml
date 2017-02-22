@@ -8,7 +8,7 @@ phases:
   install:
     commands:
       - apt-get update -y
-      - apt-get install -y maven
+      - apt-get install -y ant
   pre_build:
     commands:
       - |
@@ -17,10 +17,9 @@ phases:
     commands:
       - |
         echo Build started on `date`
-      - mvn compile
+      - ant javac TIC_hashmap.java
   post_build:
     commands:
-      - dmesg | tail
       - |
         echo Build completed on `date`
 artifacts:
