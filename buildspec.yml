@@ -17,7 +17,7 @@ phases:
     commands:
       - |
         echo Build started on `date`
-      - ant javac TIC_hashmap.java
+      - javac TIC_hashmap.java
   post_build:
     commands:
       - |
