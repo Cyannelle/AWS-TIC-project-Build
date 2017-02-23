@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tic_hashmap;
 
 import java.io.UnsupportedEncodingException;
@@ -14,11 +9,10 @@ import java.util.Set;
 
 /**
  *
- * @author aimez
+ * @author aimez,cyannelle
  */
 public class TIC_hashmap {
 
- 
     public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         String s = "abc"; 
         long n_hash = 0, i = 0;
@@ -38,8 +32,7 @@ public class TIC_hashmap {
          if (hashTable.containsValue(s1) != false) {
              flag = true;
              n_hash = i;
-             s_hash = s1;
-             
+             s_hash = s1; 
          } 
          else {
             i++;
@@ -47,29 +40,17 @@ public class TIC_hashmap {
             System.out.print(i);
             System.out.print(" ");
             System.out.println(s1);
-            
          }
      }
-     
-     
-
-    /*
-    for (Map.Entry<Long,String> pair : entrySet) {
-        if (s1.equals(pair.getValue())) {
-            n_first = pair.getKey();
-        }
-    }
-     */
      System.out.println();
      //System.out.print("First number: ");
      //System.out.println(n_first);
      System.out.print(++n_hash);
      System.out.print(" ");
      System.out.println(s_hash);
-    
     }
     
-     static String sha256(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    static String sha256(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] result = input.getBytes();
         byte[] result_kp = new byte[5];
@@ -80,13 +61,10 @@ public class TIC_hashmap {
         for (int j = 0; j <= 4; j++) {
             result_kp[j] = result[j];
         }
-
         return bytesToString(result_kp);
     }
-    
         
-        
-        static String bytesToString(byte[] input) {
+    static String bytesToString(byte[] input) {
             
          StringBuffer sb = new StringBuffer();
         
@@ -96,5 +74,4 @@ public class TIC_hashmap {
         return sb.toString();
             
         }
-    
 }
